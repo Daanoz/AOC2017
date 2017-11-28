@@ -8,7 +8,10 @@ term('Advent of Code 2017 \n');
 if(!process.argv[2]) { return term.red('No day specified\n'); }
 
 let folder = utils.getDayPath();
-if(!fs.existsSync(folder)) { return term.red('Day %s does not exist\n', day); }
+if(!fs.existsSync(folder)) { return term.red('Day %s does not exist\n', process.argv[2]); }
+
+let isPartB = process.argv[3] === 'part2';
+term('Running part %s of Day %s\n\n', isPartB?'B':'A', process.argv[2]);
 
 let daySolver = require(folder);
-daySolver(process.argv[3] === 'part2');
+daySolver(isPartB);
