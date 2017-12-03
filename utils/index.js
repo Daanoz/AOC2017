@@ -25,6 +25,18 @@ let service = {
   getDayPath: () => {
     let day = ('0' + process.argv[2]).substr(-2);
     return path.join(process.cwd(), day);
+  },
+  moveRight: (coord) => {
+    return [coord[0] + 1, coord[1]]; 
+  },
+  moveLeft: (coord) => {
+    return [coord[0] - 1, coord[1]]; 
+  },
+  moveUp: (coord) => {
+    return [coord[0], coord[1] + 1]; 
+  },
+  moveDown: (coord) => {
+    return [coord[0], coord[1] - 1]; 
   }
 };
 
