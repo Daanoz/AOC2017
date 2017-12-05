@@ -1,6 +1,4 @@
 let term = require('terminal-kit').terminal;
-let fs = require('fs');
-let path = require('path');
 let _ = require('lodash');
 let utils = require('./../utils');
 

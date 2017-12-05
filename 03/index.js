@@ -1,12 +1,10 @@
 let term = require('terminal-kit').terminal;
-let fs = require('fs');
-let path = require('path');
 let utils = require('./../utils');
 
 let getDistance = (input) => {
     let ring = Math.floor(Math.sqrt(input));
     ring = ring % 2 === 1 ? ring : (ring - 1);
-    
+
     let ringStart = Math.pow(ring,  2) + 1;
     let ringDistance = Math.ceil(ring / 2);
 
@@ -23,7 +21,7 @@ let setGridValue = (pos) => {
     for(var x = pos[0] - 1; x <= pos[0] + 1; x++) {
         for(var y = pos[1] - 1; y <= pos[1] + 1; y++) {
             sum += hasPos([x, y]) ? grid[p(x)][p(y)] : 0;
-        }   
+        }
     }
     if(!grid[p(pos[0])]) {
         grid[p(pos[0])] = {};
