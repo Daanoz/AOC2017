@@ -35,7 +35,11 @@ let calculateTotalWeights = (node) => {
 };
 let locateIssue = (node) => {
     let program = programLookup[node];
-    if(program.childs.length >= 1 && program.childs.length <= 2) {
+    if(program.childs.length === 1) {
+        // only one child, that has to contain the issue
+        return locateIssue(program.childs[0]);
+    }
+    if(program.childs.length === 2) {
         throw 'Unhandled flow, not enough childs to determine broken branch';
     }
     let groups = _.groupBy(program.childs, (child) => {
