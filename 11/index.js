@@ -46,7 +46,6 @@ module.exports = (isPartB) => {
         }
     });
 
-
     term('CurrentPos: %s, Distance: %s, furshest: %s\n', currentPos, getDistanceToOrigin(), furthest);
 };
 
