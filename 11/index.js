@@ -2,7 +2,6 @@ let term = require('terminal-kit').terminal;
 let _ = require('lodash');
 let utils = require('./../utils');
 
-let grid = {};
 let currentPos = [0, 0];
 
 let moveVertical = (direction) => {
