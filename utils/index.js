@@ -12,9 +12,9 @@ let service = {
       return value.split(/\t|\s/);
     });
   },
-  readNewLineSeperatedInput: (fileName) => {
+  readNewLineSeperatedInput: (fileName, noTrim) => {
     return _.map(service.readInput(fileName).split(/\r\n|\n|\r/), (value) => {
-      return value.trim();
+      return noTrim?value:value.trim();
     });
   },
   readCommaSeperatedInput: (fileName) => {
@@ -27,16 +27,16 @@ let service = {
     return path.join(process.cwd(), day);
   },
   moveRight: (coord) => {
-    return [coord[0] + 1, coord[1]]; 
+    return [coord[0] + 1, coord[1]];
   },
   moveLeft: (coord) => {
-    return [coord[0] - 1, coord[1]]; 
+    return [coord[0] - 1, coord[1]];
   },
   moveUp: (coord) => {
-    return [coord[0], coord[1] + 1]; 
+    return [coord[0], coord[1] + 1];
   },
   moveDown: (coord) => {
-    return [coord[0], coord[1] - 1]; 
+    return [coord[0], coord[1] - 1];
   }
 };
 
